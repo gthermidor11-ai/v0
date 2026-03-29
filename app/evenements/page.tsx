@@ -11,12 +11,12 @@ import { SectionHeader } from "@/components/section-header"
 const events = [
   {
     id: 1,
-    title: "Mois de l'Histoire des Noirs",
-    date: "Février 2026",
-    location: "Divers lieux à Montréal",
+    title: "Mois de l'Histoire des Noirs – Sud-Ouest",
+    date: "20 février 2026 @ 12:30 – 17:00",
+    location: "Bibliothèque Réjean Ducharme, 2450 rue Workman, Montréal",
     description:
-      "Célébrons l'histoire, la culture et les contributions des communautés noires au Canada. Activités, conférences et événements culturels tout au long du mois.",
-    image: "/images/african-heritage-banner.jpg",
+      "Guidés par nos valeurs de diversité, d'inclusivité, de respect et d'intégrité, nous soutenons des actions concrètes qui mettent en lumière les talents, rapprochent les communautés ethnoculturelles et renforcent le tissu social. Le Mois de l'Histoire des Noirs est l'occasion de célébrer les communautés, de reconnaître leur apport essentiel à notre société et de poursuivre, ensemble, la construction. Trois panélistes exceptionnels: un agent de la diaspora, des représentants policiers et une auteure.",
+    image: "/images/black-history-month.jpg",
     category: "Culturel",
   },
   {
