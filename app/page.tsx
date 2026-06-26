@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Heart, Users, Handshake, Globe, Leaf, Home, Mail, Phone, MapPin, ArrowRight, User } from "lucide-react"
+import { Heart, Users, Handshake, Globe, Leaf, Home, Mail, Phone, MapPin, ArrowRight, User, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { SectionHeader } from "@/components/section-header"
@@ -439,6 +439,50 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+          {/* News article card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 max-w-2xl mx-auto"
+          >
+            <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold text-center mb-4">
+              Dans les médias
+            </p>
+            <a
+              href="https://nouvellesdici.com/agenda/fete-nationale-de-saint-jean-baptiste-dans-le-sud-ouest/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col sm:flex-row rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white hover:-translate-y-1"
+            >
+              <div className="relative sm:w-52 shrink-0 aspect-video sm:aspect-auto overflow-hidden">
+                <Image
+                  src="/images/fete-nationale-drapeaux.png"
+                  alt="Drapeaux du Québec – Fête Nationale dans le Sud-Ouest"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="flex flex-col justify-between p-5 gap-3">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-2">
+                    Nouvelles d&apos;Ici
+                  </span>
+                  <h3 className="font-heading text-base font-bold mb-1.5 group-hover:text-primary transition-colors text-balance">
+                    Fête Nationale de Saint-Jean-Baptiste dans le Sud-Ouest
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Célébrez le Québec, ses emblèmes, son drapeau fleurdelisé, son histoire et sa langue française. Les 23 et 24 juin au Parc Le Ber.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-primary text-sm font-medium">
+                  <span>Lire l&apos;article</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </div>
+              </div>
+            </a>
+          </motion.div>
+
           <div className="text-center mt-10">
             <Link
               href="/evenements"
