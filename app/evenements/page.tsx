@@ -160,6 +160,51 @@ export default function EventsPage() {
         </div>
       </section>
 
+      {/* Posters Section */}
+      <section className="py-24 bg-muted">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeader
+            badge="Affiches"
+            title="Affiches officielles"
+            description="Téléchargez et partagez nos affiches pour promouvoir les événements à venir."
+          />
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-start max-w-4xl mx-auto">
+            {[
+              {
+                src: "/images/poster-fete-nationale-cadd.png",
+                alt: "Affiche Fête Nationale – Festival Black & White & CADD, 23-24 juin 2026, Parc Le Ber",
+                label: "Fête Nationale – Festival B&W",
+              },
+              {
+                src: "/images/poster-guy-lafleur.png",
+                alt: "Affiche 75e anniversaire de Guy Lafleur – Fête Nationale du Québec à Montréal, 23-24 juin 2026",
+                label: "75e anniversaire de Guy Lafleur",
+              },
+            ].map((poster, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="flex-1 flex flex-col items-center"
+              >
+                <div className="w-full max-w-xs rounded-2xl overflow-hidden shadow-2xl border border-white/60 hover:shadow-3xl transition-shadow duration-300 hover:-translate-y-1">
+                  <Image
+                    src={poster.src}
+                    alt={poster.alt}
+                    width={400}
+                    height={570}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-sm font-medium text-muted-foreground text-center">{poster.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 lg:px-8 text-center">
