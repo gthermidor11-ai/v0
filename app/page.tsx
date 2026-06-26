@@ -400,6 +400,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Event Posters Section */}
+      <section className="py-16 sm:py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            badge="Événements à venir"
+            title="Fête Nationale 2026"
+            description="Rejoignez-nous les 23 et 24 juin 2026 au Parc Le Ber pour célébrer ensemble!"
+          />
+          <div className="flex flex-col sm:flex-row gap-6 md:gap-10 justify-center items-start max-w-3xl mx-auto">
+            {[
+              {
+                src: "/images/poster-fete-nationale-cadd.png",
+                alt: "Affiche Fête Nationale – Festival Black & White & CADD, 23-24 juin 2026, Parc Le Ber",
+              },
+              {
+                src: "/images/poster-guy-lafleur.png",
+                alt: "Affiche 75e anniversaire de Guy Lafleur – Fête Nationale du Québec à Montréal, 23-24 juin 2026",
+              },
+            ].map((poster, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="flex-1"
+              >
+                <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 max-w-xs mx-auto border border-gray-100">
+                  <Image
+                    src={poster.src}
+                    alt={poster.alt}
+                    width={400}
+                    height={570}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/evenements"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors"
+            >
+              Voir tous les événements
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Partners Section */}
       <section className="py-16 sm:py-20 md:py-24 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
