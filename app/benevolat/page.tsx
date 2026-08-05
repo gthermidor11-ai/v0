@@ -70,10 +70,26 @@ export default function VolunteerPage() {
     }
 
     try {
-      const supabase = createClient()
-      const { error: dbError } = await supabase.from("volunteer_applications").insert([data])
+      // Send email notification (primary) — must always reach CADD's inbox
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "volunteer",
+          ...data,
+        }),
+      })
 
-      if (dbError) throw dbError
+      if (!res.ok) throw new Error("Email non envoyé")
+
+      // Save to database (best effort — should not block success)
+      try {
+        const supabase = createClient()
+        await supabase.from("volunteer_applications").insert([data])
+      } catch (dbErr) {
+        console.error("[v0] Volunteer DB insert failed:", dbErr)
+      }
+
       setIsSuccess(true)
     } catch (err) {
       setError("Une erreur est survenue. Veuillez réessayer.")
