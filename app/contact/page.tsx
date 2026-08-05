@@ -57,13 +57,8 @@ export default function ContactPage() {
     }
 
     try {
-      const supabase = createClient()
-      const { error: dbError } = await supabase.from("contact_messages").insert([data])
-
-      if (dbError) throw dbError
-
-      // Send email notification
-      await fetch("/api/send-email", {
+      // Send email notification (primary) — must always reach CADD's inbox
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -71,6 +66,16 @@ export default function ContactPage() {
           ...data,
         }),
       })
+
+      if (!res.ok) throw new Error("Email non envoyé")
+
+      // Save to database (best effort — should not block success)
+      try {
+        const supabase = createClient()
+        await supabase.from("contact_messages").insert([data])
+      } catch (dbErr) {
+        console.error("[v0] Contact DB insert failed:", dbErr)
+      }
 
       setIsSuccess(true)
     } catch (err) {
