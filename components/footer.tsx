@@ -107,9 +107,9 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-white/70 text-sm">
-                  3-225 Frank Selke
+                  1600, rue Ottawa
                   <br />
-                  Montréal, QC H3K 3J6
+                  Montréal, Québec H3C 0V6
                 </span>
               </li>
               <li className="flex items-center gap-3">

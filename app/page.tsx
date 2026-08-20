@@ -534,14 +534,14 @@ export default function HomePage() {
               </p>
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
                 <a
-                  href="https://maps.google.com/?q=225+Frank+Selke+Montreal"
+                  href="https://maps.google.com/?q=1600+rue+Ottawa+Montreal+Quebec+H3C+0V6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 transition-colors"
                 >
                   <MapPin className="h-6 w-6 sm:h-8 sm:w-8 mb-2 sm:mb-3" />
-                  <span className="font-medium text-sm sm:text-base">3-225 Frank Selke</span>
-                  <span className="text-white/70 text-xs sm:text-sm">Montréal, QC H3K 3J6</span>
+                  <span className="font-medium text-sm sm:text-base">1600, rue Ottawa</span>
+                  <span className="text-white/70 text-xs sm:text-sm">Montréal, Québec H3C 0V6</span>
                 </a>
                 <a
                   href="tel:+14389363697"
