@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    content: "3-225 Frank Selke\nMontréal, QC H3K 3J6",
-    href: "https://maps.google.com/?q=225+Frank+Selke+Montreal",
+    content: "1600, rue Ottawa\nMontréal, Québec H3C 0V6",
+    href: "https://maps.google.com/?q=1600+rue+Ottawa+Montreal+Quebec+H3C+0V6",
   },
   {
     icon: Phone,
